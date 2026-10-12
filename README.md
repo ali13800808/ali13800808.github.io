@@ -12,3 +12,5 @@ To regenerate the PDFs after editing `index.html`, print the page from a Chromiu
 msedge --headless=new --no-pdf-header-footer --print-to-pdf=Ali-Badri-Resume.pdf "file:///path/to/index.html?lang=en"
 msedge --headless=new --no-pdf-header-footer --print-to-pdf=Ali-Badri-Resume-fa.pdf "file:///path/to/index.html?lang=fa"
 ```
+
+GitHub Pages caches files for about ten minutes, so `index.html` references `styles.css?v=N` and `app.js?v=N`. Bump `N` whenever you change either file.
