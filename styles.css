@@ -1,5 +1,14 @@
 /* Ali Badri: resume landing. No external requests, no frameworks. */
 
+/* Persian typeface: Vazirmatn (SIL Open Font License 1.1), self-hosted, subset, variable weight. */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("fonts/Vazirmatn.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark light;
   --bg: #0b1020;
@@ -56,7 +65,14 @@ body {
   background: var(--bg);
   overflow-x: hidden;
 }
-html[lang="fa"] body { font-family: var(--font-fa); line-height: 1.95; }
+html[lang="fa"] body { font-family: var(--font-fa); font-size: 17px; font-weight: 450; line-height: 1.95; }
+html[lang="fa"] h1 { font-weight: 800; line-height: 1.25; }
+html[lang="fa"] h2 { font-weight: 800; }
+html[lang="fa"] h3 { font-weight: 700; }
+html[lang="fa"] .role { font-weight: 700; line-height: 1.6; }
+html[lang="fa"] .lead { font-size: 19px; }
+html[lang="fa"] .btn { font-weight: 600; }
+html[lang="fa"] .tags li { font-weight: 450; }
 
 /* language switching: both languages live in the markup */
 html[lang="fa"] .en { display: none !important; }
@@ -156,7 +172,7 @@ h1 { margin: 0; font-size: clamp(40px, 7.5vw, 68px); line-height: 1.05; font-wei
 .hero-art .pg { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.5; }
 .hero-art .bars rect { fill: var(--line); }
 .hero-art .box { fill: color-mix(in srgb, var(--accent-3) 12%, transparent); stroke: var(--accent-3); stroke-width: 2; animation: box 6s ease-in-out infinite; }
-.hero-art .fa-line text { fill: var(--text); font-family: var(--font-fa); }
+.hero-art .fa-line text { fill: var(--text); font-family: var(--font-fa); font-weight: 600; }
 .hero-art .scan { animation: scan 6s ease-in-out infinite; }
 .hero-art .chip-art rect { fill: var(--accent); }
 .hero-art .chip-art text { fill: var(--on-accent); font-family: var(--mono); font-weight: 700; }
@@ -173,7 +189,9 @@ h2::after {
 h3 { margin: 0; font-size: 18px; line-height: 1.35; }
 h3 small { font-weight: 500; color: var(--muted); font-size: 15px; }
 .sub-h { margin: 30px 0 10px; }
-.about { margin: 0; max-width: 72ch; font-size: 17.5px; color: var(--text); }
+.about { margin: 0; max-width: 72ch; font-size: 17.5px; color: var(--text); text-wrap: pretty; }
+h1, h2, h3, .role, .sub { text-wrap: balance; }
+.lead, .points li, .card p { text-wrap: pretty; }
 
 /* timeline */
 .timeline { list-style: none; margin: 0; margin-inline-start: 8px; padding: 0; border-inline-start: 2px solid var(--line); }
@@ -267,7 +285,10 @@ html[lang="fa"] .arrow { display: inline-block; transform: scaleX(-1); }
   }
   html { font-size: 9.1pt; }
   body { background: #fff; color: #111827; font-size: 9.1pt; line-height: 1.32; }
-  html[lang="fa"] body { line-height: 1.42; }
+  html[lang="fa"] body { font-size: 9.1pt; font-weight: 450; line-height: 1.5; }
+  html[lang="fa"] h1 { font-size: 22pt; line-height: 1.2; }
+  html[lang="fa"] .role { font-size: 12pt; line-height: 1.4; }
+  html[lang="fa"] .lead, html[lang="fa"] .sub { font-size: 9.1pt; }
   body::before, .site-header, .hero-art, .avatar, .actions, .skip, .site-footer, .note, .nav, .lang, #projects .more { display: none !important; }
   .print-only { display: block; margin: 6px 0 0; color: #111827; font-size: 10pt; }
   html[lang="fa"] .print-only { text-align: right; }

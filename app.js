@@ -39,6 +39,15 @@
   var browserFa = (navigator.language || "").toLowerCase().indexOf("fa") === 0;
   var current = apply(fromUrl || read() || (browserFa ? "fa" : "en"));
 
+  // Persian visitors: start fetching the web font right away (English visitors only pay for it
+  // if they switch, or for the small Persian line in the hero illustration).
+  if (current === "fa") {
+    var pre = document.createElement("link");
+    pre.rel = "preload"; pre.as = "font"; pre.type = "font/woff2"; pre.crossOrigin = "anonymous";
+    pre.href = "fonts/Vazirmatn.woff2";
+    document.head.appendChild(pre);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     apply(current);
     var btn = document.getElementById("lang-toggle");

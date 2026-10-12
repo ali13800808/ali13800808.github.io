@@ -14,3 +14,5 @@ msedge --headless=new --no-pdf-header-footer --print-to-pdf=Ali-Badri-Resume-fa.
 ```
 
 GitHub Pages caches files for about ten minutes, so `index.html` references `styles.css?v=N` and `app.js?v=N`. Bump `N` whenever you change either file.
+
+Persian text is set in [Vazirmatn](https://github.com/rastikerdar/vazirmatn) (SIL Open Font License 1.1, license in `fonts/OFL.txt`), self-hosted as a subset variable WOFF2 in `fonts/`.
